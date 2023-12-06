@@ -26,13 +26,26 @@ body {
 }
 
 .header {
-  min-height: 90vh;
+  min-height: 100vh;
   width: 100%;
-  background-image: linear-gradient(rgba(4, 9, 10, 0.7), rgba(4, 9, 10, 0.7)),
-    url(images/Cover.jpg);
+  background:linear-gradient(pink, skyblue);
   background-position: center;
   background-size: cover;
   position: relative;
+}
+
+
+a {
+  text-decoration: none;
+  display: block;
+  padding: 10px;
+  font-weight: bold;
+  color: brown;
+  transition: background-color 0.3s;
+}
+
+a:hover {
+  background-color: #ddd;
 }
 
 .carousel {
