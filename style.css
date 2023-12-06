@@ -29,7 +29,7 @@ body {
   min-height: 100vh;
   width: 100%;
   background-image: linear-gradient(rgba(4, 9, 10, 0.7), rgba(4, 9, 10, 0.7)),
-    url(images/cover2.jpg);
+    url(images/Cover.jpg);
   background-position: center;
   background-size: cover;
   position: relative;
@@ -97,6 +97,7 @@ nav img {
 .text-box h1 {
   font-size: 62px;
 }
+
 .text-box p {
   margin: 10px 0 40px;
   font-size: 14px;
@@ -163,12 +164,15 @@ nav .fa {
   0% {
     opacity: 0;
   }
+
   40% {
     opacity: 1;
   }
+
   80% {
     opacity: 0;
   }
+
   100% {
     opacity: 0;
   }
@@ -178,12 +182,15 @@ nav .fa {
   0% {
     opacity: 0;
   }
+
   40% {
     opacity: 1;
   }
+
   80% {
     opacity: 0;
   }
+
   100% {
     opacity: 0;
   }
@@ -209,12 +216,15 @@ nav .fa {
     height: 70px;
     padding: 20px;
   }
+
   .text-box h1 {
     font-size: 20px;
   }
+
   .nav-links ul li {
     display: block;
   }
+
   .nav-links {
     margin-top: 0px;
     position: fixed;
@@ -227,6 +237,7 @@ nav .fa {
     z-index: 2;
     transition: 0.5s;
   }
+
   nav .fa {
     display: block;
     color: #fff;
@@ -235,6 +246,7 @@ nav .fa {
     cursor: pointer;
     padding: 10px;
   }
+
   .nav-links ul {
     padding: 30px;
   }
@@ -253,6 +265,7 @@ nav .fa {
   .header h3 {
     display: none;
   }
+
   ::-webkit-scrollbar {
     display: none;
   }
@@ -266,10 +279,12 @@ nav .fa {
   text-align: center;
   padding-top: 100px;
 }
+
 h1 {
   font-size: 36px;
   font-weight: 600;
 }
+
 p {
   color: #777;
   font-size: 14px;
@@ -293,11 +308,13 @@ p {
   box-sizing: border-box;
   transition: 0.2s;
 }
+
 h3 {
   text-align: center;
   font-weight: 600;
   margin: 10px 0;
 }
+
 .course-col:hover {
   box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.2);
 }
@@ -752,10 +769,12 @@ h3 {
     opacity: 1;
     pointer-events: all;
   }
+
   90% {
     opacity: 1;
     pointer-events: all;
   }
+
   100% {
     opacity: 0;
     pointer-events: none;
