@@ -26,7 +26,7 @@ body {
 }
 
 .header {
-  min-height: 100vh;
+  min-height: 90vh;
   width: 100%;
   background-image: linear-gradient(rgba(4, 9, 10, 0.7), rgba(4, 9, 10, 0.7)),
     url(images/Cover.jpg);
