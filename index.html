@@ -13,6 +13,59 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600;700&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <style>
+        .text-box {
+            /* Your existing styles for the text-box div */
+        }
+
+        h1,
+        h2 {
+            /* Common styles for h1 and h2 */
+            font-weight: bold;
+        }
+
+        /* Larger styles for all headings in mobile view */
+        @media screen and (max-width: 767px) {
+
+            h1,
+            h2 {
+                font-size: 24px;
+                /* Adjust the size as needed */
+            }
+        }
+
+        /* Smaller style for h2 in mobile view */
+        @media screen and (max-width: 767px) {
+            h2 {
+                font-size: 18px;
+                /* Adjust the size as needed */
+            }
+        }
+
+        /* Custom styles for each heading based on color */
+        h1:nth-of-type(1) {
+            color: black;
+        }
+
+        h1:nth-of-type(2) {
+            color: rgb(222, 118, 118);
+        }
+
+        h1:nth-of-type(3) {
+            color: brown;
+        }
+
+        h1:nth-of-type(4) {
+            color: blueviolet;
+        }
+
+        h2 {
+            color: rgb(42, 61, 55);
+            font-weight: 700;
+        }
+    </style>
+
 </head>
 
 <body>
