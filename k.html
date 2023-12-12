@@ -29,25 +29,23 @@
             height: auto;
         }
 
-        .dots-container {
+        .navigation {
             position: absolute;
-            bottom: 10px;
-            left: 50%;
-            transform: translateX(-50%);
+            top: 50%;
+            width: 100%;
             display: flex;
+            justify-content: space-between;
+            transform: translateY(-50%);
         }
 
-        .dot {
-            height: 12px;
-            width: 12px;
-            margin: 0 8px;
-            background-color: #bbb;
-            border-radius: 50%;
+        .arrow {
+            font-size: 24px;
+            color: #fff;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 8px;
+            border: none;
             cursor: pointer;
-        }
-
-        .dot.active {
-            background-color: #717171;
+            outline: none;
         }
 
         @media (max-width: 600px) {
@@ -56,73 +54,74 @@
             }
         }
     </style>
-    <title>ಗ್ರಾಮೀಣ ಸಹಭಾಗಿತ್ವದ ಅಧ್ಯಯನ</title>
+   <title>ಗ್ರಾಮೀಣ ಸಹಭಾಗಿತ್ವದ ಅಧ್ಯಯನ</title>
 </head>
 
 <body>
     <div class="photo-container">
-        <div class="photo-wrapper" id="photoWrapper">
-            <img src="/images/k1.jpg" alt="Photo 1">
-            <img src="/images/k2.jpg" alt="Photo 2">
-            <img src="/images/k3.jpg" alt="Photo 3">
-            <img src="/images/k4.jpg" alt="Photo 4">
-            <img src="/images/k5.jpg" alt="Photo 5">
-            <img src="/images/k6.jpg" alt="Photo 6">
-            <img src="/images/k7.jpg" alt="Photo 7">
-            <img src="/images/k8.jpg" alt="Photo 8">
-            <!-- Add more images as needed -->
+        <div class="photo-container">
+            <div class="photo-wrapper" id="photoWrapper">
+                <img src="/images/k1.jpg" alt="Photo 1">
+                <img src="/images/k2.jpg" alt="Photo 2">
+                <img src="/images/k3.jpg" alt="Photo 3">
+                <img src="/images/k4.jpg" alt="Photo 4">
+                <img src="/images/k5.jpg" alt="Photo 5">
+                <img src="/images/k6.jpg" alt="Photo 6">
+                <img src="/images/k7.jpg" alt="Photo 7">
+                <img src="/images/k8.jpg" alt="Photo 8">
+                <!-- Add more images as needed -->
+            </div>
+            <div class="dots-container" id="dotsContainer"></div>
         </div>
-        <div class="dots-container" id="dotsContainer"></div>
+        <div class="navigation">
+            <button class="arrow" id="prevArrow">&lt;</button>
+            <button class="arrow" id="nextArrow">&gt;</button>
+        </div>
     </div>
     <script>
         document.addEventListener("DOMContentLoaded", function () {
             const photoWrapper = document.getElementById("photoWrapper");
-            const dotsContainer = document.getElementById("dotsContainer");
+            const prevArrow = document.getElementById("prevArrow");
+            const nextArrow = document.getElementById("nextArrow");
 
-            // Create dots based on the number of images
-            for (let i = 0; i < photoWrapper.children.length; i++) {
-                const dot = document.createElement("div");
-                dot.classList.add("dot");
-                dot.setAttribute("data-index", i);
-                dotsContainer.appendChild(dot);
-            }
+            // Handle arrow click events
+            prevArrow.addEventListener("click", () => {
+                goToPhoto(Math.max(currentIndex - 1, 0));
+            });
 
-            const dots = Array.from(dotsContainer.children);
+            nextArrow.addEventListener("click", () => {
+                goToPhoto(Math.min(currentIndex + 1, photoWrapper.children.length - 1));
+            });
 
-            // Set the first dot as active initially
-            dots[0].classList.add("active");
+            // Handle swipe events
+            let startX = 0;
 
-            // Handle dot click event
-            dots.forEach((dot) => {
-                dot.addEventListener("click", () => {
-                    const index = dot.getAttribute("data-index");
-                    goToPhoto(index);
-                });
+            photoWrapper.addEventListener("touchstart", (event) => {
+                startX = event.touches[0].clientX;
+            });
+
+            photoWrapper.addEventListener("touchend", (event) => {
+                const endX = event.changedTouches[0].clientX;
+                const deltaX = endX - startX;
+
+                if (Math.abs(deltaX) > 50) {
+                    // Swipe threshold: 50 pixels
+                    if (deltaX > 0) {
+                        // Swipe right
+                        goToPhoto(Math.max(currentIndex - 1, 0));
+                    } else {
+                        // Swipe left
+                        goToPhoto(Math.min(currentIndex + 1, photoWrapper.children.length - 1));
+                    }
+                }
             });
 
             // Handle scroll event
             let currentIndex = 0;
 
-            photoWrapper.addEventListener("wheel", (event) => {
-                event.preventDefault();
-                const delta = event.deltaY || event.detail || event.wheelDelta;
-                if (delta > 0) {
-                    // Scrolling down
-                    currentIndex = Math.min(currentIndex + 1, photoWrapper.children.length - 1);
-                } else {
-                    // Scrolling up
-                    currentIndex = Math.max(currentIndex - 1, 0);
-                }
-                goToPhoto(currentIndex);
-            });
-
             function goToPhoto(index) {
                 const offset = -index * 100;
                 photoWrapper.style.transform = `translateX(${offset}%)`;
-
-                // Update dots
-                dots.forEach((dot) => dot.classList.remove("active"));
-                dots[index].classList.add("active");
                 currentIndex = index;
             }
         });
