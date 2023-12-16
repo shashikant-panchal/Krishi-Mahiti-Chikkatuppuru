@@ -8,36 +8,48 @@
     <title>ಕೃಷಿ ಮಾಹಿತಿ</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Poppins', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
+            background-color: #f8f9fa;
+            color: #343a40;
         }
 
         header {
-            background: linear-gradient(rgb(158, 237, 158), rgb(113, 113, 226));
+            background: linear-gradient(rgb(89, 64, 186), rgb(68, 166, 226));
             color: white;
             text-align: center;
             padding: 1em;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
 
         nav {
-            background-color: #ddd;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+            background-color: #fff;
             padding: 1em;
+            border-radius: 10px;
+            margin: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
 
         nav a {
             text-decoration: none;
-            color: #333;
-            display: block;
-            padding: 10px;
-            margin-bottom: 5px;
-            border-radius: 5px;
-            transition: background-color 0.3s;
+            color: #343a40;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            border-radius: 10px;
+            transition: background-color 0.3s, transform 0.2s, color 0.3s;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
 
         nav a:hover {
-            background-color: #ccc;
+            background-color: #007bff;
+            color: #fff;
+            transform: scale(1.05);
         }
     </style>
 </head>
@@ -50,22 +62,14 @@
 
     <nav>
         <a href="b.html">ಬೇಸಾಯ ಶಾಸ್ತ್ರ</a>
-        <a href="c.html">ಮಣ್ಣು ವಿಜ್ಞಾನ
-        </a>
-        <a href="d.html">ಕೃಷಿ ಅಭಿವೃದ್ಧಿ ಯೋಜನೆಗಳು
-        </a>
-        <a href="#">ಸಸ್ಯ ರೋಗ ಶಾಸ್ತ್ರ
-        </a>
-        <a href="#">ಕೀಟಶಾಸ್ತ್ರ
-        </a>
-        <a href="#">ಸುದಾರಿತ ತಳಿಗಳು
-        </a>
-        <a href="#">ರೇಷ್ಮೆ ಕೃಷಿ ಮಾಹಿತಿ
-        </a>
-        <a href="#">ಅಣಬೆ ಬೇಸಾಯ
-        </a>
-        <a href="#">ಸಮಗ್ರ ಕೃಷಿ ವ್ಯವಸ್ಥೆ
-        </a>
+        <a href="c.html">ಮಣ್ಣು ವಿಜ್ಞಾನ</a>
+        <a href="d.html">ಕೃಷಿ ಅಭಿವೃದ್ಧಿ ಯೋಜನೆಗಳು</a>
+        <a href="#">ಸಸ್ಯ ರೋಗ ಶಾಸ್ತ್ರ</a>
+        <a href="#">ಕೀಟಶಾಸ್ತ್ರ</a>
+        <a href="#">ಸುದಾರಿತ ತಳಿಗಳು</a>
+        <a href="#">ರೇಷ್ಮೆ ಕೃಷಿ ಮಾಹಿತಿ</a>
+        <a href="#">ಅಣಬೆ ಬೇಸಾಯ</a>
+        <a href="#">ಸಮಗ್ರ ಕೃಷಿ ವ್ಯವಸ್ಥೆ</a>
         <!-- Add more topics as needed -->
     </nav>
 
