@@ -267,11 +267,11 @@ nav .fa {
   /* Custom styles for the logo in mobile view */
   @media screen and (max-width: 767px) {
     nav img {
-      width: 50%;
+      width: 55%;
       height: auto;
       /* Adjust the width as needed */
       display: block;
-      margin: 0 auto;
+      margin: 2 auto;
       /* Center the logo */
     }
   }
