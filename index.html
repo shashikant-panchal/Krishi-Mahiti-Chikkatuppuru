@@ -62,6 +62,21 @@
             color: rgb(42, 61, 55);
             font-weight: 700;
         }
+
+        #carouselExample {
+            display: flex;
+            margin: 100px auto;
+            width: 90%;
+            height: 50vh;
+            justify-content: 'center';
+            align-items: center;
+            background-image: linear-gradient(rgba(35, 39, 10, 0.7), rgba(61, 19, 19, 0.7));
+            background-position: center;
+            background-size: cover;
+            border-radius: 10px;
+            text-align: center;
+            padding: 100px 0;
+        }
     </style>
 
 </head>
@@ -87,18 +102,16 @@
         </nav>
         <div class="text-box">
             <h1 style="color: black; font-weight: bold;">ಕೃಷಿ ವಿಶ್ವವಿದ್ಯಾನಿಲಯ ಬೆಂಗಳೂರು</h1>
-            <h1 style="color: rgb(222, 118, 118); font-weight: bold;">
+            <h1 style="color:  #922b21; font-weight: bold;">
                 ಕೃಷಿ ಮಹಾವಿದ್ಯಾಲಯ ಚಾಮರಾಜನಗರ
             </h1>
-            <h1 style="color: brown; font-weight: bold;">
+            <h1 style="color: rgb(61, 28, 123); font-weight: bold;">
                 ಕೃಷಿ ಮಾಹಿತಿ ಕೇಂದ್ರ- ಕೃಷಿ ಒಡಲು
             </h1>
             <h1 style="color: blueviolet; font-weight: bold;">
                 ಚಿಕ್ಕತುಪ್ಪೂರು,
             </h1>
-            <h2 style="color: rgb(42, 61, 55); font-weight: 700;">ತಾ - ಗುಂಡ್ಲುಪೇಟೆ ಜಿ - ಚಾಮರಾಜನಗರ</h2>
-            <!-- <a href="contact.html" class="hero-btn">Visit us to know more.</a> -->
-            <!-- <h3>Scroll for more info</h3> -->
+            <h2 style="color: rgb(79, 58, 13); font-weight: 700;">ತಾ - ಗುಂಡ್ಲುಪೇಟೆ ಜಿ - ಚಾಮರಾಜನಗರ</h2>
         </div>
         <svg class="arrows">
             <path stroke-linecap="round" class="a1" d="M0 0 L15 15 L30 0"></path>
@@ -179,7 +192,7 @@
     $(document).ready(function () {
         var myCarousel = $('#carouselExample');
         myCarousel.carousel({
-            interval: 2000  // Set your desired interval in milliseconds
+            interval: 1900  // Set your desired interval in milliseconds
         });
 
         // Optionally, you can add buttons to manually control the carousel

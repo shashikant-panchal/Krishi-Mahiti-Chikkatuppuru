@@ -80,7 +80,9 @@ nav img {
 .nav-links ul li a {
   color: white;
   text-decoration: none;
-  font-size: 13px;
+  font-size: 15px;
+  text-shadow: #3f5177;
+  -webkit-text-stroke-color: #222;
 }
 
 .nav-links ul li ::after {
@@ -334,6 +336,7 @@ p {
   box-sizing: border-box;
   transition: 0.2s;
 }
+
 
 h3 {
   text-align: center;
