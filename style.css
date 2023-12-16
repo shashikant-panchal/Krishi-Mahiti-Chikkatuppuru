@@ -271,10 +271,8 @@ nav .fa {
     nav img {
       width: 55%;
       height: auto;
-      /* Adjust the width as needed */
       display: block;
-      margin: 2 auto;
-      /* Center the logo */
+      margin: 0 auto;
     }
   }
 
