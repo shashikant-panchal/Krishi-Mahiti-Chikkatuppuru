@@ -10,12 +10,25 @@
             margin: 0;
             overflow-x: hidden;
             font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+        }
+
+        .gallery-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            overflow: hidden;
         }
 
         .photo-container {
             position: relative;
-            width: 100%;
+            width: 80%;
+            max-width: 1200px;
             overflow: hidden;
+            border-radius: 8px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
         }
 
         .photo-wrapper {
@@ -27,32 +40,37 @@
         .photo-wrapper img {
             width: 100%;
             height: auto;
+            max-height: 100vh; /* Ensure the image doesn't exceed the viewport height */
+            object-fit: fill; /* Maintain aspect ratio while filling the container */
+            border-radius: 8px;
         }
 
-        .dots-container {
+        .arrow-container {
             position: absolute;
-            bottom: 10px;
-            left: 50%;
-            transform: translateX(-50%);
+            top: 50%;
+            width: 100%;
             display: flex;
+            justify-content: space-between;
+            transform: translateY(-50%);
         }
 
-        .dot {
-            height: 12px;
-            width: 12px;
-            margin: 0 8px;
-            background-color: #bbb;
-            border-radius: 50%;
+        .arrow {
+            font-size: 24px;
+            color: #3498db;
             cursor: pointer;
+            background: none;
+            border: none;
+            outline: none;
+            transition: color 0.3s ease;
         }
 
-        .dot.active {
-            background-color: #717171;
+        .arrow:hover {
+            color: #2980b9;
         }
 
-        @media (max-width: 600px) {
-            .photo-wrapper {
-                width: 100%;
+        @media (max-width: 768px) {
+            .photo-container {
+                width: 90%;
             }
         }
     </style>
@@ -60,56 +78,42 @@
 </head>
 
 <body>
-    <div class="photo-container">
-        <div class="photo-wrapper" id="photoWrapper">
-            <img src="/images/b1.jpg" alt="Photo 1">
-            <img src="/images/b2.jpg" alt="Photo 2">
-            <img src="/images/b3.jpg" alt="Photo 3">
-            <img src="/images/b4.jpg" alt="Photo 4">
-            <img src="/images/b5.jpg" alt="Photo 5">
-            <img src="/images/b6.jpg" alt="Photo 6">
-            <img src="/images/b7.jpg" alt="Photo 7">
-            <img src="/images/b8.jpg" alt="Photo 8">
-            <img src="/images/b9.jpg" alt="Photo 9">
-            <img src="/images/b10.jpg" alt="Photo 10">
-            <img src="/images/b11.jpg" alt="Photo 11">
-            <img src="/images/b12.jpg" alt="Photo 12">
-            <img src="/images/b13.jpg" alt="Photo 13">
-            <img src="/images/b14.jpg" alt="Photo 14">
-            <!-- Add more images as needed -->
+    <div class="gallery-container">
+        <div class="photo-container">
+            <div class="arrow-container">
+                <button class="arrow" onclick="prevPhoto()">&#9664;</button>
+                <button class="arrow" onclick="nextPhoto()">&#9654;</button>
+            </div>
+            <div class="photo-wrapper" id="photoWrapper">
+                <img src="/images/b1.jpg" alt="Photo 1">
+                <img src="/images/b2.jpg" alt="Photo 2">
+                <img src="/images/b3.jpg" alt="Photo 3">
+                <img src="/images/b4.jpg" alt="Photo 4">
+                <img src="/images/b5.jpg" alt="Photo 5">
+                <img src="/images/b6.jpg" alt="Photo 6">
+                <img src="/images/b7.jpg" alt="Photo 7">
+                <img src="/images/b8.jpg" alt="Photo 8">
+                <img src="/images/b9.jpg" alt="Photo 9">
+                <img src="/images/b10.jpg" alt="Photo 10">
+                <img src="/images/b11.jpg" alt="Photo 11">
+                <img src="/images/b12.jpg" alt="Photo 12">
+                <img src="/images/b13.jpg" alt="Photo 13">
+                <img src="/images/b14.jpg" alt="Photo 14">
+            </div>
         </div>
-        <div class="dots-container" id="dotsContainer"></div>
     </div>
     <script>
         document.addEventListener("DOMContentLoaded", function () {
             const photoWrapper = document.getElementById("photoWrapper");
-            const dotsContainer = document.getElementById("dotsContainer");
 
-            // Create dots based on the number of images
-            for (let i = 0; i < photoWrapper.children.length; i++) {
-                const dot = document.createElement("div");
-                dot.classList.add("dot");
-                dot.setAttribute("data-index", i);
-                dotsContainer.appendChild(dot);
-            }
+            // Handle arrow click events
+            document.querySelector(".arrow-container .arrow:nth-child(1)").addEventListener("click", prevPhoto);
+            document.querySelector(".arrow-container .arrow:nth-child(2)").addEventListener("click", nextPhoto);
 
-            const dots = Array.from(dotsContainer.children);
-
-            // Set the first dot as active initially
-            dots[0].classList.add("active");
-
-            // Handle dot click event
-            dots.forEach((dot) => {
-                dot.addEventListener("click", () => {
-                    const index = dot.getAttribute("data-index");
-                    goToPhoto(index);
-                });
-            });
-
-            // Handle scroll event
+            // Handle manual scroll event
             let currentIndex = 0;
 
-            photoWrapper.addEventListener("wheel", (event) => {
+            window.addEventListener("wheel", (event) => {
                 event.preventDefault();
                 const delta = event.deltaY || event.detail || event.wheelDelta;
                 if (delta > 0) {
@@ -122,13 +126,19 @@
                 goToPhoto(currentIndex);
             });
 
+            function prevPhoto() {
+                currentIndex = Math.max(currentIndex - 1, 0);
+                goToPhoto(currentIndex);
+            }
+
+            function nextPhoto() {
+                currentIndex = Math.min(currentIndex + 1, photoWrapper.children.length - 1);
+                goToPhoto(currentIndex);
+            }
+
             function goToPhoto(index) {
                 const offset = -index * 100;
                 photoWrapper.style.transform = `translateX(${offset}%)`;
-
-                // Update dots
-                dots.forEach((dot) => dot.classList.remove("active"));
-                dots[index].classList.add("active");
                 currentIndex = index;
             }
         });
