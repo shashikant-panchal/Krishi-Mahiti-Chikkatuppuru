@@ -16,11 +16,13 @@
             color: #fff;
             font-family: 'Arial', sans-serif;
             text-align: center;
+            animation: gradientAnimation 5s infinite alternate-reverse;
         }
 
         h1 {
             font-size: 3em;
             margin-bottom: 10px;
+            animation: textAnimation 2s infinite alternate;
         }
 
         p {
@@ -30,6 +32,24 @@
 
         .countdown {
             font-size: 2em;
+        }
+
+        @keyframes gradientAnimation {
+            0% {
+                background: linear-gradient(45deg, #c645f1, #feb47b);
+            }
+            100% {
+                background: linear-gradient(45deg, #37e5bc, #3267da);
+            }
+        }
+
+        @keyframes textAnimation {
+            0% {
+                transform: scale(1);
+            }
+            100% {
+                transform: scale(1.1);
+            }
         }
     </style>
 </head>
