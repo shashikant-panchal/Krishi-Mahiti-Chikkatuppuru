@@ -297,27 +297,32 @@ nav .fa {
   }
 }
 
-/* -------COURSE------- */
+/* -------KRISHI MAHITI------- */
 
-.course {
-  width: 80%;
-  margin: auto;
+/* Style for the boxes */
+.box {
+  height: 200px; /* Adjust the height as needed */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+/* Style for the box titles */
+.box-title {
+  color: #fff;
   text-align: center;
-  padding-top: 100px;
+  margin: 0;
 }
 
-h1 {
-  font-size: 36px;
-  font-weight: 600;
+/* Hover effect for the boxes */
+.box:hover {
+  background: linear-gradient(to right, #333, #555); /* Adjust hover background color */
 }
 
-p {
-  color: #777;
-  font-size: 14px;
-  font-weight: 300;
-  line-height: 22px;
-  padding: 10px;
-}
 
 .row {
   margin-top: 5%;
