@@ -15,67 +15,82 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <style>
-        /* .text-box {
-            /* Your existing styles for the text-box div */
-        */ h1,
-        h2 {
-            /* Common styles for h1 and h2 */
-            font-weight: bold;
-        }
-
-        /* Larger styles for all headings in mobile view */
-        @media screen and (max-width: 767px) {
-
-            h1,
-            h2 {
-                font-size: 24px;
-                /* Adjust the size as needed */
-            }
-        }
-
-        /* Smaller style for h2 in mobile view */
-        @media screen and (max-width: 767px) {
-            h2 {
-                font-size: 18px;
-                /* Adjust the size as needed */
-            }
-        }
-
-        /* Custom styles for each heading based on color */
-        h1:nth-of-type(1) {
-            color: black;
-        }
-
-        h1:nth-of-type(2) {
-            color: rgb(222, 118, 118);
-        }
-
-        h1:nth-of-type(3) {
-            color: brown;
-        }
-
-        h1:nth-of-type(4) {
-            color: blueviolet;
-        }
-
-        h2 {
-            color: rgb(42, 61, 55);
-            font-weight: 700;
-        }
-
+        /* Custom styles for the carousel */
         #carouselExample {
+            max-width: 1100px;
+            margin: auto;
+            overflow: hidden;
+            margin-top: 2rem;
+            margin-bottom: 2rem;
+            height: 90vh;
+            object-fit: cover;
+        }
+
+        .carousel-inner img {
+            width: 100%;
+            /* border-radius: 10px; */
+        }
+
+        /* Optional: Add a semi-transparent overlay to the images */
+        .carousel-inner::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.3);
+            /* border-radius: 10px; */
+        }
+
+
+        @media screen and (max-width: 768px) {
+            #carouselExample {
+                max-width: 800px;
+                /* Adjust the max-width to your preference */
+                margin: auto;
+                /* border-radius: 10px; */
+                height: 50vh;
+                overflow: hidden;
+                margin-top: 2rem;
+                margin-bottom: 2rem;
+            }
+        }
+    </style>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .container {
             display: flex;
-            margin: 100px auto;
-            width: 90%;
-            height: 50vh;
-            justify-content: 'center';
-            align-items: center;
-            background-image: linear-gradient(rgba(35, 39, 10, 0.7), rgba(61, 19, 19, 0.7));
-            background-position: center;
-            background-size: cover;
-            border-radius: 10px;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        .box {
+            width: 45%;
+            margin: 10px;
+            padding: 20px;
             text-align: center;
-            padding: 100px 0;
+            border: 1px solid #ccc;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            background: linear-gradient(to bottom right, #4CAF50, #2196F3);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .box:hover {
+            transform: scale(1.05);
+        }
+
+        @media screen and (max-width: 768px) {
+            .box {
+                width: 45%;
+            }
         }
     </style>
 
@@ -125,69 +140,53 @@
     <div id="carouselExample" class="carousel slide" data-ride="carousel" data-interval="1200">
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img src="images/g1.jpg" class="d-block w-100" alt="Carousel Image 1">
+                <img src="images/g1.jpg" class="d-block w-100" alt="Carousel Image 1" style="object-fit: cover;">
             </div>
             <div class="carousel-item">
-                <img src="images/g2.jpg" class=" d-block w-100" alt="Carousel Image 2">
+                <img src="images/g2.jpg" class="d-block w-100" alt="Carousel Image 2" style="object-fit: cover;">
             </div>
             <div class="carousel-item">
-                <img src="images/g3.jpg" class=" d-block w-100" alt="Carousel Image 3">
+                <img src="images/g3.jpg" class="d-block w-100" alt="Carousel Image 3" style="object-fit: cover;">
             </div>
             <div class="carousel-item">
-                <img src="images/banner3.jpg" class=" d-block w-100" alt="Carousel Image 4">
+                <img src="images/banner3.jpg" class="d-block w-100" alt="Carousel Image 4" style="object-fit: cover;">
             </div>
             <div class="carousel-item">
-                <img src="images/banner4.jpg" class=" d-block w-100" alt="Carousel Image 5">
+                <img src="images/banner4.jpg" class="d-block w-100" alt="Carousel Image 5" style="object-fit: cover;">
             </div>
             <div class="carousel-item">
-                <img src="images/bannner5.jpg" class=" d-block w-100" alt="Carousel Image 6">
+                <img src="images/bannner5.jpg" class="d-block w-100" alt="Carousel Image 6" style="object-fit: cover;">
             </div>
             <div class="carousel-item">
-                <img src="images/Cover.jpg" class=" d-block w-100" alt="Carousel Image 7">
+                <img src="images/Cover.jpg" class="d-block w-100" alt="Carousel Image 7" style="object-fit: cover;">
             </div>
-
         </div>
     </div>
 
     <!-- Add this section below the carousel -->
 
-    <section class="krishi-mahiti">
-        <div class="container">
-            <h2 class="section-heading" style="text-align: center;">ಕೃಷಿ ಮಾಹಿತಿ</h2>
-            <div class="row">
-                <!-- Responsive Boxes -->
-                <div class="col-lg-3 col-md-6 mb-4">
-                    <a href="soon.html" class="box-link">
-                        <div class="box" style="background: linear-gradient(to right, #ff7e5f, #eeb588);">
-                            <h3 class="box-title">ಬೇಸಾಯ ಶಾಸ್ತ್ರ</h3>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-lg-3 col-md-6 mb-4">
-                    <a href="soon.html" class="box-link">
-                        <div class="box" style="background: linear-gradient(to right, #43e97b, #38f9d7);">
-                            <h3 class="box-title">ಮಣ್ಣು ವಿಜ್ಞಾನ</h3>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-lg-3 col-md-6 mb-4">
-                    <a href="soon.html" class="box-link">
-                        <div class="box" style="background: linear-gradient(to right, #7f7fd5, #b9cff8);">
-                            <h3 class="box-title">ಕೀಟಶಾಸ್ತ್ರ</h3>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-lg-3 col-md-6 mb-4">
-                    <a href="soon.html" class="box-link">
-                        <div class="box" style="background: linear-gradient(to right, #ffd700, #dfd7a9);">
-                            <h3 class="box-title">ಅಣಬೆ ಬೇಸಾಯ</h3>
-                        </div>
-                    </a>
-                </div>
-            </div>
+    <div class="container">
+        <div class="box" style="background: linear-gradient(to right, #ff7e5f, #eeb588);">
+            <a href="KrishiMahiti.html">
+                <h4 class="box-title">ಕೃಷಿ ಮಾಹಿತಿ</h4>
+            </a>
         </div>
-    </section>
-
+        <div class="box" style="background: linear-gradient(to right, #43e97b, #38f9d7);">
+            <a href="KaryaKrama.html">
+                <h4 class="box-title">ಕಾರ್ಯಕ್ರಮಗಳು</h4>
+            </a>
+        </div>
+        <div class="box" style="background: linear-gradient(to right, #7f7fd5, #b9cff8);">
+            <a href="Prakatane.html">
+                <h4 class="box-title">ಪತ್ರಿಕಾಪ್ರಕಟಣೆಗಳು</h4>
+            </a>
+        </div>
+        <div class="box" style="background: linear-gradient(to right, #ffd700, #dfd7a9);">
+            <a href="contact.html">
+                <h4 class="box-title">ಸಂಪರ್ಕಿಸಿ</h4>
+            </a>
+        </div>
+    </div>
 
 
     <!-- --------Call to Action -------  -->
@@ -244,12 +243,13 @@
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
+
 <script>
     // Manually control the carousel and set the interval
     $(document).ready(function () {
         var myCarousel = $('#carouselExample');
         myCarousel.carousel({
-            interval: 1900  // Set your desired interval in milliseconds
+            interval: 1800  // Set your desired interval in milliseconds
         });
 
         // Optionally, you can add buttons to manually control the carousel
