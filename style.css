@@ -313,9 +313,10 @@ nav .fa {
 
 /* Style for the box titles */
 .box-title {
-  color: #fff;
+  color: #ffffff;
   text-align: center;
   margin: 0;
+  font-weight: bolder;
 }
 
 /* Hover effect for the boxes */
