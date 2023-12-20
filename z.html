@@ -1,20 +1,33 @@
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <link rel="icon" href="images/Logo.jpg" type="image/png">
     <meta charset="UTF-8">
+    <link rel="icon" href="images/Logo.jpg" type="image/png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
         body {
             margin: 0;
             overflow-x: hidden;
             font-family: 'Arial', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+            /* Add a background color for better visibility */
         }
 
         .photo-container {
             position: relative;
-            width: 100%;
+            width: 80%;
+            /* Adjust the width as needed */
+            max-width: 1200px;
+            /* Add a maximum width for larger screens */
             overflow: hidden;
         }
 
@@ -22,6 +35,8 @@
             display: flex;
             transition: transform 0.5s ease;
             width: fit-content;
+            margin: 0 auto;
+            /* Center the gallery */
         }
 
         .photo-wrapper img {
@@ -29,31 +44,24 @@
             height: auto;
         }
 
-        .dots-container {
+        .arrow {
             position: absolute;
-            bottom: 10px;
-            left: 50%;
-            transform: translateX(-50%);
-            display: flex;
-        }
-
-        .dot {
-            height: 12px;
-            width: 12px;
-            margin: 0 8px;
-            background-color: #bbb;
-            border-radius: 50%;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 24px;
+            color: #fff;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 10px;
             cursor: pointer;
+            user-select: none;
         }
 
-        .dot.active {
-            background-color: #717171;
+        .arrow.left {
+            left: 10px;
         }
 
-        @media (max-width: 600px) {
-            .photo-wrapper {
-                width: 100%;
-            }
+        .arrow.right {
+            right: 10px;
         }
     </style>
     <title>ಬಿತ್ತನೆ ಬೀಜದ ಮೊಳಕೆ ಪರೀಕ್ಷೆ
@@ -70,60 +78,39 @@
             <img src="/images/z5.jpg" alt="Photo 5">
             <img src="/images/z6.jpg" alt="Photo 6">
             <img src="/images/z7.jpg" alt="Photo 7">
+
             <!-- Add more images as needed -->
         </div>
-        <div class="dots-container" id="dotsContainer"></div>
+        <div class="arrow left" onclick="prevPhoto()">&#8249;</div>
+        <div class="arrow right" onclick="nextPhoto()">&#8250;</div>
     </div>
     <script>
         document.addEventListener("DOMContentLoaded", function () {
             const photoWrapper = document.getElementById("photoWrapper");
-            const dotsContainer = document.getElementById("dotsContainer");
-
-            // Create dots based on the number of images
-            for (let i = 0; i < photoWrapper.children.length; i++) {
-                const dot = document.createElement("div");
-                dot.classList.add("dot");
-                dot.setAttribute("data-index", i);
-                dotsContainer.appendChild(dot);
-            }
-
-            const dots = Array.from(dotsContainer.children);
-
-            // Set the first dot as active initially
-            dots[0].classList.add("active");
-
-            // Handle dot click event
-            dots.forEach((dot) => {
-                dot.addEventListener("click", () => {
-                    const index = dot.getAttribute("data-index");
-                    goToPhoto(index);
-                });
-            });
-
-            // Handle scroll event
+            const arrows = document.querySelectorAll(".arrow");
             let currentIndex = 0;
 
-            photoWrapper.addEventListener("wheel", (event) => {
-                event.preventDefault();
-                const delta = event.deltaY || event.detail || event.wheelDelta;
-                if (delta > 0) {
-                    // Scrolling down
-                    currentIndex = Math.min(currentIndex + 1, photoWrapper.children.length - 1);
-                } else {
-                    // Scrolling up
-                    currentIndex = Math.max(currentIndex - 1, 0);
-                }
+            function nextPhoto() {
+                currentIndex = (currentIndex + 1) % photoWrapper.children.length;
                 goToPhoto(currentIndex);
-            });
+            }
+
+            function prevPhoto() {
+                currentIndex = (currentIndex - 1 + photoWrapper.children.length) % photoWrapper.children.length;
+                goToPhoto(currentIndex);
+            }
+
+            arrows.forEach(arrow => arrow.addEventListener("click", () => {
+                if (arrow.classList.contains("left")) {
+                    prevPhoto();
+                } else {
+                    nextPhoto();
+                }
+            }));
 
             function goToPhoto(index) {
                 const offset = -index * 100;
                 photoWrapper.style.transform = `translateX(${offset}%)`;
-
-                // Update dots
-                dots.forEach((dot) => dot.classList.remove("active"));
-                dots[index].classList.add("active");
-                currentIndex = index;
             }
         });
     </script>

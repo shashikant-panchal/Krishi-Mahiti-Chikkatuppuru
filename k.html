@@ -2,19 +2,28 @@
 <html lang="en">
 
 <head>
-    <link rel="icon" href="images/Logo.jpg" type="image/png">
     <meta charset="UTF-8">
+    <link rel="icon" href="images/Logo.jpg" type="image/png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
         body {
             margin: 0;
             overflow-x: hidden;
             font-family: 'Arial', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+            /* Add a background color for better visibility */
         }
 
         .photo-container {
             position: relative;
-            width: 100%;
+            width: 80%;
+            /* Adjust the width as needed */
+            max-width: 1200px;
+            /* Add a maximum width for larger screens */
             overflow: hidden;
         }
 
@@ -22,6 +31,8 @@
             display: flex;
             transition: transform 0.5s ease;
             width: fit-content;
+            margin: 0 auto;
+            /* Center the gallery */
         }
 
         .photo-wrapper img {
@@ -29,100 +40,73 @@
             height: auto;
         }
 
-        .navigation {
+        .arrow {
             position: absolute;
             top: 50%;
-            width: 100%;
-            display: flex;
-            justify-content: space-between;
             transform: translateY(-50%);
-        }
-
-        .arrow {
             font-size: 24px;
             color: #fff;
             background-color: rgba(0, 0, 0, 0.5);
-            padding: 8px;
-            border: none;
+            padding: 10px;
             cursor: pointer;
-            outline: none;
+            user-select: none;
         }
 
-        @media (max-width: 600px) {
-            .photo-wrapper {
-                width: 100%;
-            }
+        .arrow.left {
+            left: 10px;
+        }
+
+        .arrow.right {
+            right: 10px;
         }
     </style>
-   <title>ಗ್ರಾಮೀಣ ಸಹಭಾಗಿತ್ವದ ಅಧ್ಯಯನ</title>
+    <title>ಗ್ರಾಮೀಣ ಸಹಭಾಗಿತ್ವದ ಅಧ್ಯಯನ</title>
 </head>
 
 <body>
     <div class="photo-container">
-        <div class="photo-container">
-            <div class="photo-wrapper" id="photoWrapper">
-                <img src="/images/k1.jpg" alt="Photo 1">
-                <img src="/images/k2.jpg" alt="Photo 2">
-                <img src="/images/k3.jpg" alt="Photo 3">
-                <img src="/images/k4.jpg" alt="Photo 4">
-                <img src="/images/k5.jpg" alt="Photo 5">
-                <img src="/images/k6.jpg" alt="Photo 6">
-                <img src="/images/k7.jpg" alt="Photo 7">
-                <img src="/images/k8.jpg" alt="Photo 8">
-                <!-- Add more images as needed -->
-            </div>
-            <div class="dots-container" id="dotsContainer"></div>
+        <div class="photo-wrapper" id="photoWrapper">
+            <img src="/images/k1.jpg" alt="Photo 1">
+            <img src="/images/k2.jpg" alt="Photo 2">
+            <img src="/images/k3.jpg" alt="Photo 3">
+            <img src="/images/k4.jpg" alt="Photo 4">
+            <img src="/images/k5.jpg" alt="Photo 5">
+            <img src="/images/k6.jpg" alt="Photo 6">
+            <img src="/images/k7.jpg" alt="Photo 7">
+            <img src="/images/k8.jpg" alt="Photo 8">
+
+            <!-- Add more images as needed -->
         </div>
-        <div class="navigation">
-            <button class="arrow" id="prevArrow">&lt;</button>
-            <button class="arrow" id="nextArrow">&gt;</button>
-        </div>
+        <div class="arrow left" onclick="prevPhoto()">&#8249;</div>
+        <div class="arrow right" onclick="nextPhoto()">&#8250;</div>
     </div>
     <script>
         document.addEventListener("DOMContentLoaded", function () {
             const photoWrapper = document.getElementById("photoWrapper");
-            const prevArrow = document.getElementById("prevArrow");
-            const nextArrow = document.getElementById("nextArrow");
-
-            // Handle arrow click events
-            prevArrow.addEventListener("click", () => {
-                goToPhoto(Math.max(currentIndex - 1, 0));
-            });
-
-            nextArrow.addEventListener("click", () => {
-                goToPhoto(Math.min(currentIndex + 1, photoWrapper.children.length - 1));
-            });
-
-            // Handle swipe events
-            let startX = 0;
-
-            photoWrapper.addEventListener("touchstart", (event) => {
-                startX = event.touches[0].clientX;
-            });
-
-            photoWrapper.addEventListener("touchend", (event) => {
-                const endX = event.changedTouches[0].clientX;
-                const deltaX = endX - startX;
-
-                if (Math.abs(deltaX) > 50) {
-                    // Swipe threshold: 50 pixels
-                    if (deltaX > 0) {
-                        // Swipe right
-                        goToPhoto(Math.max(currentIndex - 1, 0));
-                    } else {
-                        // Swipe left
-                        goToPhoto(Math.min(currentIndex + 1, photoWrapper.children.length - 1));
-                    }
-                }
-            });
-
-            // Handle scroll event
+            const arrows = document.querySelectorAll(".arrow");
             let currentIndex = 0;
+
+            function nextPhoto() {
+                currentIndex = (currentIndex + 1) % photoWrapper.children.length;
+                goToPhoto(currentIndex);
+            }
+
+            function prevPhoto() {
+                currentIndex = (currentIndex - 1 + photoWrapper.children.length) % photoWrapper.children.length;
+                goToPhoto(currentIndex);
+            }
+
+            arrows.forEach(arrow => arrow.addEventListener("click", () => {
+                if (arrow.classList.contains("left")) {
+                    prevPhoto();
+                } else {
+                    nextPhoto();
+                }
+            }));
 
             function goToPhoto(index) {
                 const offset = -index * 100;
                 photoWrapper.style.transform = `translateX(${offset}%)`;
-                currentIndex = index;
             }
         });
     </script>
