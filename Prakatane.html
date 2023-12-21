@@ -4,24 +4,65 @@
 <head>
     <link rel="icon" href="images/Logo.jpg" type="image/png">
     <meta charset="UTF-8">
-    <link rel="icon" href="images/Logo.jpg" type="image/png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <title>ಪತ್ರಿಕಾಪ್ರಕಟಣೆಗಳು</title>
     <style>
         body {
             padding: 30px;
-            background: linear-gradient(to bottom right, #f0f0f0, #d1d1d1);
+            background: linear-gradient(to bottom right,rgb(23, 69, 23), rgb(12, 9, 69), green);
+        }
+
+        h1 {
+            text-align: center;
+            color: #fdfdfd;
+            margin-bottom: 30px;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            grid-gap: 20px;
         }
 
         .gallery img {
             width: 100%;
             height: auto;
-            margin-bottom: 30px;
-            border: 5px solid #793e3e;
-            /* Add a 2px solid border to each image */
             border-radius: 8px;
-            /* Optional: Add some border radius for a rounded look */
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery img:hover {
+            transform: scale(1.05);
+        }
+
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            justify-content: center;
+            align-items: center;
+            z-index: 999;
+        }
+
+        .lightbox img {
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: 8px;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 24px;
+            color: #fff;
+            cursor: pointer;
         }
     </style>
 </head>
@@ -29,7 +70,7 @@
 <body>
 
     <div class="container">
-        <h1 class="text-center">ಪತ್ರಿಕಾ ಪ್ರಕಟಣೆಗಳು</h1>
+        <h1>ಪತ್ರಿಕಾ ಪ್ರಕಟಣೆಗಳು</h1>
 
         <div class="gallery">
             <img src="/images/p1.jpg" alt="Image 1">
@@ -75,6 +116,16 @@
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script>
+        function openLightbox(imageSrc) {
+            document.getElementById("lightbox-img").src = imageSrc;
+            document.querySelector(".lightbox").style.display = "flex";
+        }
+
+        function closeLightbox() {
+            document.querySelector(".lightbox").style.display = "none";
+        }
+    </script>
 </body>
 
 </html>

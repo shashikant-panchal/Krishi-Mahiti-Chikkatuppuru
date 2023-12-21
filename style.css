@@ -28,7 +28,7 @@ body {
 .header {
   min-height: 100vh;
   width: 100%;
-  background:linear-gradient(pink, skyblue);
+  background: linear-gradient(rgb(255, 167, 181), rgb(150, 250, 150), rgb(145, 175, 236));
   background-position: center;
   background-size: cover;
   position: relative;
@@ -78,9 +78,11 @@ nav img {
 }
 
 .nav-links ul li a {
-  color: white;
+  color: rgb(15, 6, 6);
   text-decoration: none;
-  font-size: 13px;
+  font-size: 15px;
+  text-shadow: #3f5177;
+  -webkit-text-stroke-color: #222;
 }
 
 .nav-links ul li ::after {
@@ -166,8 +168,8 @@ nav .fa {
 }
 
 .arrows path {
-  stroke: white;
-  fill: transparent;
+  stroke: rgb(86, 40, 40);
+  /* fill: transparent; */
   stroke-width: 1px;
   animation: arrow 2s infinite;
   -webkit-animation: arrow 2s infinite;
@@ -241,7 +243,7 @@ nav .fa {
   .nav-links {
     margin-top: 0px;
     position: fixed;
-    background: #f44336;
+    background: linear-gradient(rgb(170, 237, 170), rgb(146, 127, 215), rgb(96, 230, 198));
     height: 100vh;
     width: 200px;
     top: 0;
@@ -264,6 +266,17 @@ nav .fa {
     padding: 30px;
   }
 
+  /* Custom styles for the logo in mobile view */
+  @media screen and (max-width: 767px) {
+    nav img {
+      width: 55%;
+      height: auto;
+      display: block;
+      margin-left:  6rem;
+    }
+  }
+
+
   .arrows {
     /* width: 40px;
     height: 28px; */
@@ -284,27 +297,33 @@ nav .fa {
   }
 }
 
-/* -------COURSE------- */
+/* -------KRISHI MAHITI------- */
 
-.course {
-  width: 80%;
-  margin: auto;
+/* Style for the boxes */
+.box {
+  height: 200px; /* Adjust the height as needed */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+/* Style for the box titles */
+.box-title {
+  color: #ffffff;
   text-align: center;
-  padding-top: 100px;
+  margin: 0;
+  font-weight: bolder;
 }
 
-h1 {
-  font-size: 36px;
-  font-weight: 600;
+/* Hover effect for the boxes */
+.box:hover {
+  background: linear-gradient(to right, #333, #555); /* Adjust hover background color */
 }
 
-p {
-  color: #777;
-  font-size: 14px;
-  font-weight: 300;
-  line-height: 22px;
-  padding: 10px;
-}
 
 .row {
   margin-top: 5%;
@@ -321,6 +340,7 @@ p {
   box-sizing: border-box;
   transition: 0.2s;
 }
+
 
 h3 {
   text-align: center;

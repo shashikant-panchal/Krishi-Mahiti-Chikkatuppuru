@@ -1,119 +1,240 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us</title>
+    <title>ಸಂಪರ್ಕಿಸಿ</title>
     <link rel="icon" href="images/Logo.jpg" type="image/png">
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600;700&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+        integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        /* Reset some default styles */
+        body,
+        h1,
+        h2,
+        h3,
+        p,
+        ul,
+        li {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(to right, #8ff7c6, #9c8be7);
+            color: #fff;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1 {
+            text-align: center;
+            color: #fff;
+            margin-bottom: 30px;
+        }
+
+        .contact-us {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            padding: 50px;
+        }
+
+        .contact-col {
+            flex: 1;
+            margin: 10px;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .contact-col:hover {
+            transform: translateY(-5px);
+        }
+
+        .contact-col h1 {
+            color: #e74c3c;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .contact-col div {
+            text-align: center;
+        }
+
+        .plain-link {
+            text-decoration: none;
+            color: #333;
+        }
+
+        .plain-link:hover {
+            color: #e74c3c;
+        }
+
+        .hero-btn {
+            display: inline-block;
+            padding: 10px 20px;
+            margin-top: 20px;
+            background-color: #e74c3c;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .hero-btn:hover {
+            background-color: #c0392b;
+        }
+
+        form {
+            text-align: center;
+        }
+
+        input,
+        textarea {
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #bdc3c7;
+            border-radius: 5px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        /* Responsive styles */
+        @media only screen and (max-width: 768px) {
+            .contact-col {
+                flex: 100%;
+                margin: 10px 0;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
-    <h1 style="text-align: center;">ಸಂಪರ್ಕಿಸಿ</h1>
+    <h1>ಸಂಪರ್ಕಿಸಿ</h1>
 
-
-    <!-- --------Contact us content-------- -->
+    <!-- Contact us content -->
 
     <section class="contact-us">
-        <div class="row">
-            <div class="contact-col">
-                <h1>Our Contact Details</h1>
-                <div>
-                    <a class="plain-link" href="tel:8123411162"><i class="fa fa-phone"></i></a>
-                    <a class="plain-link" href="tel:8123411162">
-                        <span>
-                            <h3>Dr. Mutteppa chi..
-                            </h3>
-                            <h5>+91 8123411162</h5>
-                        </span>
-                    </a>
-                </div>
-                <div>
-                    <a class="plain-link" href="tel:9008472394"><i class="fa fa-phone"></i></a>
-                    <a class="plain-link" href="tel:9008472394">
-                        <span>
-                            <h3>Dr. Shivaray navi
-                            </h3>
-                            <h5>+91 9008472394</h5>
-                        </span>
-                    </a>
-                </div>
-                <div>
-                    <a class="plain-link" href="tel:9980870502"><i class="fa fa-phone"></i></a>
-                    <a class="plain-link" href="tel:9980870502">
-                        <span>
-                            <h3>Dr. Shashikumar
-                            </h3>
-                            <h5>+91 9980870502</h5>
-                        </span>
-                    </a>
-                </div>
-                <div>
-                    <a class="plain-link" href="tel:7406152815"><i class="fa fa-phone"></i></a>
-                    <a class="plain-link" href="tel:7406152815">
-                        <span>
-                            <h3>Dr. Pompanagouda 
-                            </h3>
-                            <h5>+91 7406152815</h5>
-                        </span>
-                    </a>
-                </div>
-                <div>
-                    <a class="plain-link" href="tel:8105393010"><i class="fa fa-phone"></i></a>
-                    <a class="plain-link" href="tel:8105393010">
-                        <span>
-                            <h3>Dr. Pradeep</h3>
-                            <h5>+91 8105393010</h5>
-                        </span>
-                    </a>
-                </div>
-                <!-- <div>
-                <a class="plain-link" href="mailto:deanadmissions@rknec.edu"><i class="fa fa-envelope-o"></i></a>
-                <span>
-                    <a class="plain-link" href="mailto:deanadmissions@rknec.edu">
-                    <h5>deanadmissions@rknec.edu</h5>
-                    <p>Email us for admission related queries.</p>
-                    </a>
-                </span>
-            </div> -->
+        <div class="contact-col">
+            <h1>Our Experts</h1>
+            <div>
+                <a class="plain-link" href="tel:8123411162"><i class="fa fa-phone"></i></a>
+                <a class="plain-link" href="tel:8123411162">
+                    <span>
+                        <h3>Dr. Mutteppa chi..
+                        </h3>
+                        <h5>+91 8123411162</h5>
+                    </span>
+                </a>
             </div>
-            <div class="contact-col">
-                <h1>Post your Query</h1>
-                <form action="https://formspree.io/f/xrgrdkry" id="contact-form" method="POST">
-                    <input type="text" name="Name" id="Name" placeholder="Enter your Name" required>
-                    <input type="email" name="Email" id="Email" placeholder="Enter your Email" required>
-                    <input type="text" name="Subject" id="Subject" placeholder="Enter your Subject" required>
-                    <textarea rows="8" name="Message" id="Message" placeholder="Message" required></textarea>
-                    <button type="submit" class="hero-btn red-btn submit-btn">Send Message</button>
-                </form>
-                <div id="status"></div>
+            <div>
+                <a class="plain-link" href="tel:9008472394"><i class="fa fa-phone"></i></a>
+                <a class="plain-link" href="tel:9008472394">
+                    <span>
+                        <h3>Dr. Shivaray navi
+                        </h3>
+                        <h5>+91 9008472394</h5>
+                    </span>
+                </a>
+            </div>
+            <div>
+                <a class="plain-link" href="tel:9980870502"><i class="fa fa-phone"></i></a>
+                <a class="plain-link" href="tel:9980870502">
+                    <span>
+                        <h3>Dr. Shashikumar
+                        </h3>
+                        <h5>+91 9980870502</h5>
+                    </span>
+                </a>
+            </div>
+            <div>
+                <a class="plain-link" href="tel:7406152815"><i class="fa fa-phone"></i></a>
+                <a class="plain-link" href="tel:7406152815">
+                    <span>
+                        <h3>Dr. Pompanago.. 
+                        </h3>
+                        <h5>+91 7406152815</h5>
+                    </span>
+                </a>
+            </div>
+            <div>
+                <a class="plain-link" href="tel:8105393010"><i class="fa fa-phone"></i></a>
+                <a class="plain-link" href="tel:8105393010">
+                    <span>
+                        <h3>Dr. Pradeep</h3>
+                        <h5>+91 8105393010</h5>
+                    </span>
+                </a>
+            </div>
+            <div>
+                <a class="plain-link" href="tel:8105393010"><i class="fa fa-phone"></i></a>
+                <a class="plain-link" href="tel:8105393010">
+                    <span>
+                        <h3>Deepa Mam</h3>
+                        <h5>+91 8073366874</h5>
+                    </span>
+                </a>
+            </div>
+            <div>
+                <a class="plain-link" href="tel:8105393010"><i class="fa fa-phone"></i></a>
+                <a class="plain-link" href="tel:8105393010">
+                    <span>
+                        <h3>Dr. Somu G</h3>
+                        <h5>+91 9986399718</h5>
+                    </span>
+                </a>
+            </div>
+            <div>
+                <a class="plain-link" href="tel:8105393010"><i class="fa fa-phone"></i></a>
+                <a class="plain-link" href="tel:8105393010">
+                    <span>
+                        <h3>Dr. Raghavendra</h3>
+                        <h5>+91 9900961617</h5>
+                    </span>
+                </a>
+            </div>
+            <div>
+                <a class="plain-link" href="tel:8105393010"><i class="fa fa-phone"></i></a>
+                <a class="plain-link" href="tel:8105393010">
+                    <span>
+                        <h3>Dr. Umashankar</h3>
+                        <h5>+91 9739337172</h5>
+                    </span>
+                </a>
+            </div>
+            <div>
+                <a class="plain-link" href="tel:8105393010"><i class="fa fa-phone"></i></a>
+                <a class="plain-link" href="tel:8105393010">
+                    <span>
+                        <h3>Dr. Yogesh</h3>
+                        <h5>+91 7760846678</h5>
+                    </span>
+                </a>
             </div>
         </div>
+
+        <div class="contact-col">
+            <h1>Post your Query</h1>
+            <form action="https://formspree.io/f/xrgrdkry" id="contact-form" method="POST">
+                <input type="text" name="Name" id="Name" placeholder="Enter your Name" required>
+                <input type="email" name="Email" id="Email" placeholder="Enter your Email" required>
+                <input type="text" name="Subject" id="Subject" placeholder="Enter your Subject" required>
+                <textarea rows="5" name="Message" id="Message" placeholder="Message" required></textarea>
+                <button type="submit" class="hero-btn red-btn submit-btn">Send Message</button>
+            </form>
+            <div id="status"></div>
+        </div>
     </section>
-
-
-    <!-- ------- Footer -------  -->
-
-
-    <!-- -------------JavaScript for form submission------------ -->
-    <script src="main.js"></script>
-
-    <!-- -------------JavaScript for toggle menu------------ -->
-    <script>
-        var navLinks = document.getElementById("navLinks");
-        function showMenu() {
-            navLinks.style.right = "0";
-        }
-        function hideMenu() {
-            navLinks.style.right = "-200px";
-        }
-    </script>
 
 </body>
 
