@@ -177,12 +177,13 @@
             transition: transform 0.3s ease-in-out;
         }
 
+        /* Common styles for both box1 and box2 */
         .box1,
         .box2 {
-            width: 45%;
-            border-radius: 10px;
+            width: 100%;
             margin: 10px;
             padding: 20px;
+            border-radius: 10px;
             text-align: center;
             border: 1px solid #ccc;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -191,13 +192,29 @@
             transition: transform 0.3s ease-in-out;
         }
 
+        /* Specific styles for box1 */
         .box1 {
             background-image: url(images/Cover.jpg);
         }
 
+        /* Specific styles for box2 */
         .box2 {
             background-image: url(images/cover20.jpg);
         }
+
+        /* Media query for larger screens (adjust the min-width and width values as needed) */
+        @media (min-width: 768px) {
+
+            .box1,
+            .box2 {
+                width: 60%;
+                max-width: 600px;
+                height: 30vh;
+                /* Adjust as needed */
+            }
+        }
+
+
 
 
         .box:hover {
@@ -317,17 +334,18 @@
     <!-- Add this section below the carousel -->
 
     <div style="display: flex; justify-content: center; align-items: center; margin-bottom: 5rem;">
-        <div class="box1">
-            <a href="#">
-                <h6 class="box-title">ಕೃಷಿ ಒಡಲು</h6>
+        <div class="box1" onclick="location.href='#';" style="cursor: pointer;">
+            <a href="#" style="display: block; text-decoration: none; color: inherit;">
+                <!-- <h6 class="box-title">ಕೃಷಿ ಒಡಲು</h6> -->
             </a>
         </div>
-        <div class="box2">
-            <a href="#">
-                <h6 class="box-title">ಕೃಷಿ ಕಲರವ</h6>
+        <div class="box2" onclick="location.href='#';" style="cursor: pointer;">
+            <a href="#" style="display: block; text-decoration: none; color: inherit;">
+                <!-- <h6 class="box-title">ಕೃಷಿ ಕಲರವ</h6> -->
             </a>
         </div>
     </div>
+
 
 
     <div class="container">
