@@ -177,6 +177,29 @@
             transition: transform 0.3s ease-in-out;
         }
 
+        .box1,
+        .box2 {
+            width: 45%;
+            border-radius: 10px;
+            margin: 10px;
+            padding: 20px;
+            text-align: center;
+            border: 1px solid #ccc;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            background-size: cover;
+            background-position: center;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .box1 {
+            background-image: url(images/Cover.jpg);
+        }
+
+        .box2 {
+            background-image: url(images/cover20.jpg);
+        }
+
+
         .box:hover {
             transform: scale(1.05);
         }
@@ -292,6 +315,20 @@
     </div>
 
     <!-- Add this section below the carousel -->
+
+    <div style="display: flex; justify-content: center; align-items: center; margin-bottom: 5rem;">
+        <div class="box1">
+            <a href="#">
+                <h6 class="box-title">ಕೃಷಿ ಒಡಲು</h6>
+            </a>
+        </div>
+        <div class="box2">
+            <a href="#">
+                <h6 class="box-title">ಕೃಷಿ ಕಲರವ</h6>
+            </a>
+        </div>
+    </div>
+
 
     <div class="container">
         <div class="box" style="background: linear-gradient(to right, #ee5630, #e5a87a);">
