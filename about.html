@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <link rel="icon" href="images/logoNew.png" type="image/png">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <section class="sub-header sub-header-image-1">
+        <nav>
+            <a href="index.html"><img src="images/logoNew.png"></a>
+            <div class="nav-links" id="navLinks">
+                <i class="fa fa-times" onclick="hideMenu()"></i>
+                <ul>
+                    <li><a style="color:white;" href="index.html">HOME</a></li>
+                    <li><a style="color:white;" href="KrishiMahiti.html">ಕೃಷಿ ಮಾಹಿತಿ
+                        </a></li>
+                    <li><a style="color:white;" href="KaryaKrama.html">ಕಾರ್ಯಕ್ರಮಗಳು
+                        </a></li>
+                    <li><a style="color:white;" href="contact.html">ಸಂಪರ್ಕಿಸಿ</a></li>
+                    <li><a style="color:white;" href="Prakatane.html">ಪತ್ರಿಕಾಪ್ರಕಟಣೆಗಳು
+                        </a></li>
+                </ul>
+            </div>
+            <i class="fa fa-bars" onclick="showMenu()"></i>
+        </nav>
+        <!-- <h1>About Us</h1> -->
+    </section>
+
+    <!-- --------About us content-------- -->
+
+    <section class="about-us">
+        <div class="row">
+            <div class="about-col">
+                <h1>College of Agriculture, K.V.K Chamarajanagara</h1>
+                <p>
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aspernatur voluptate voluptates, porro in
+                    ratione error veniam! Sapiente qui aut sed magni rerum, sit eius pariatur perspiciatis facere, nemo
+                    eveniet laudantium, placeat dolores est quia unde officiis. Porro dolorem ex aperiam expedita
+                    quisquam, harum quod totam.
+                </p>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur assumenda nesciunt rerum ipsam
+                    tenetur. Distinctio fugit beatae accusantium facilis vel magnam excepturi, enim dolore modi eveniet
+                    reiciendis, aliquid ullam molestiae sunt aliquam consequuntur ipsum saepe doloribus? Explicabo
+                    officia impedit temporibus, dolor voluptas accusantium aliquid eos?
+                </p>
+                <a href="https://www.kvkchamarajanagar.com/" class="hero-btn red-btn">EXPLORE NOW</a>
+            </div>
+            <div class="about-col">
+                <img src="images/banner3.jpg" alt="">
+            </div>
+        </div>
+    </section>
+
+
+    <section class="location">
+        <h1>Our Location</h1>
+        <div class="map">
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d3904.172472488169!2d76.95051342505865!3d11.89307578833192!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1skvk%20chamarajanagar!5e0!3m2!1sen!2sin!4v1703436668522!5m2!1sen!2sin"
+                width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+    </section>
+
+    <!-- -------------JavaScript for toggle menu------------ -->
+    <script>
+        var navLinks = document.getElementById("navLinks");
+        function showMenu() {
+            navLinks.style.right = "0";
+        }
+        function hideMenu() {
+            navLinks.style.right = "-200px";
+        }
+    </script>
+
+</body>
+
+</html>
