@@ -11,7 +11,7 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            background-image: linear-gradient(rgb(122, 33, 33), rgba(104, 18, 103, 0.7), rgb(112, 139, 37), rgba(78, 124, 32, 0.7), rgb(35, 157, 35), rgb(134, 41, 41));
+            background-image: linear-gradient(rgb(25, 59, 90), rgba(104, 18, 103, 0.7), rgb(112, 139, 37), rgba(78, 124, 32, 0.7), rgb(35, 157, 35), rgb(134, 41, 41));
         }
 
         .container {
@@ -57,6 +57,23 @@
             margin-top: auto;
         }
 
+        .rainbow-text {
+            background: linear-gradient(45deg, rgb(209, 20, 230), rgb(252, 52, 2), rgb(93, 146, 226), rgb(139, 239, 139), rgb(228, 17, 165), rgb(228, 17, 165));
+            /* Rainbow gradient, adjust colors as needed */
+            -webkit-background-clip: text;
+            color: transparent;
+            /* display: inline-block; */
+            text-align: center;
+
+        }
+
+        h1 {
+            text-align: center;
+            color: #fff;
+            font-family: 'Your Preferred Font', sans-serif;
+            /* Replace 'Your Preferred Font' with the desired font */
+        }
+
         @media (max-width: 767px) {
             .team-card {
                 width: calc(50% - 60px);
@@ -69,8 +86,10 @@
 <body>
 
     <div class="container">
-        <h1 style='text-align: center; color: #fff;'>Our Team</h1>
-        <h1 style='text-align: center; color: #fff;'>Agventures 2K21</h1>
+        <h2 style='text-align: center; color: #fff;'>Our Team</h2>
+        <!-- <h1>Our Team</h1> -->
+        <h1 class="rainbow-text">Agventures 2K21</h1>
+        <!-- <h1 style='text-align: center; color: #fff;'>Agventures 2K21</h1> -->
 
         <div class="team-cards">
             <!-- Repeat the following team card section for each team member -->
