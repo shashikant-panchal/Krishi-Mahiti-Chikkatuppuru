@@ -4,72 +4,75 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
+    <title>Responsive Boxes</title>
     <style>
         body {
+            font-family: Arial, sans-serif;
             margin: 0;
-            font-family: 'Arial', sans-serif;
-            background-image: linear-gradient(rgba(255, 203, 235, 0.7), rgba(170, 244, 246, 0.7));
-            background-position: center;
-            background-size: cover;
-            display: flex;
+            padding: 0;
+            box-sizing: border-box;
             align-items: center;
-            justify-content: center;
-            height: 100vh;
-            margin: 0;
         }
 
         .container {
             display: flex;
             flex-wrap: wrap;
-            justify-content: space-around;
-            border-radius: 10px;
-            overflow: hidden;
+            justify-content: center;
+            /* Center horizontally */
+            align-items: center;
+            /* Center vertically */
+            min-height: 100vh;
+            /* Set minimum height to fill the viewport */
+            padding: 20px;
         }
 
         .box {
-            width: 45%;
+            flex: 0 0 45%;
+            /* Adjust as needed */
             margin: 10px;
             padding: 20px;
             text-align: center;
-            border: 1px solid #ccc;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            background: linear-gradient(to bottom right, #4CAF50, #2196F3);
-            transition: transform 0.3s ease-in-out;
-            border-radius: 8px;
-            overflow: hidden;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            text-decoration: none;
+            color: #fff;
         }
 
         .box:hover {
-            transform: scale(1.05);
+            background-color: #ddd;
         }
 
-        .box-title {
-            margin: 0;
-            color: white;
+        .box1 {
+            background: linear-gradient(45deg, #d27824, #492dd5);
+            border-radius: 10px;
+        }
+
+        .box2 {
+            background: linear-gradient(45deg, #5315c8, #2fd082);
+            border-radius: 10px;
         }
 
         @media (max-width: 768px) {
             .box {
-                width: 100%;
+                flex-basis: 90%;
+                /* Adjust the margin for smaller screens */
             }
         }
     </style>
 </head>
 
 <body>
+
     <div class="container">
-        <div class="box" style="background: linear-gradient(to right, #3cb564, #0d493e);">
-            <a href="soon.html">
-                <h6 class="box-title">ಕಾರ್ಯಕ್ರಮಗಳು</h6>
-            </a>
-        </div>
-        <div class="box" style="background: linear-gradient(to right, #4040ba, #9182ed);">
-            <a href="soon.html">
-                <h6 class="box-title">ಪತ್ರಿಕಾಪ್ರಕಟಣೆಗಳು</h6>
-            </a>
-        </div>
+        <a href="soon.html" class="box box1">
+            <h2>ಕಾರ್ಯಕ್ರಮಗಳು</h2>
+        </a>
+
+        <a href="soon.html" class="box box2">
+            <h2>ಪತ್ರಿಕಾಪ್ರಕಟಣೆಗಳು</h2>
+        </a>
     </div>
+
 </body>
 
 </html>
