@@ -21,7 +21,7 @@
             /* Center horizontally */
             align-items: center;
             /* Center vertically */
-            min-height: 100vh;
+            min-height: 80vh;
             /* Set minimum height to fill the viewport */
             padding: 20px;
         }
@@ -29,7 +29,7 @@
         .box {
             flex: 0 0 45%;
             /* Adjust as needed */
-            margin: 10px;
+            margin-top: 100px;
             padding: 20px;
             text-align: center;
             cursor: pointer;
@@ -43,18 +43,20 @@
         }
 
         .box1 {
-            background: linear-gradient(45deg, #d27824, #492dd5);
+            background: linear-gradient(45deg, #6c34e7, #f28f16);
             border-radius: 10px;
+            padding: 50px;
         }
 
         .box2 {
-            background: linear-gradient(45deg, #5315c8, #2fd082);
+            background: linear-gradient(45deg, #87b825, #2011ab);
             border-radius: 10px;
+            padding: 50px;
         }
 
         @media (max-width: 768px) {
             .box {
-                flex-basis: 90%;
+                flex-basis: 70%;
                 /* Adjust the margin for smaller screens */
             }
         }
