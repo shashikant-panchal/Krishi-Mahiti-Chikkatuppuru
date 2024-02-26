@@ -15,16 +15,14 @@
             align-items: center;
             height: 100vh;
             background-color: #f0f0f0;
-            /* Add a background color for better visibility */
         }
 
         .photo-container {
             position: relative;
             width: 80%;
-            /* Adjust the width as needed */
-            max-width: 1200px;
-            /* Add a maximum width for larger screens */
+            max-width: 1200px; /* Adjust the max-width for larger screens */
             overflow: hidden;
+            border: 15px double black;
         }
 
         .photo-wrapper {
@@ -32,11 +30,11 @@
             transition: transform 0.5s ease;
             width: fit-content;
             margin: 0 auto;
-            /* Center the gallery */
+            max-width: 100%; /* Ensure the wrapper doesn't exceed the container */
         }
 
         .photo-wrapper img {
-            width: 100%;
+            max-width: 100%; /* Set a maximum width for the images */
             height: auto;
         }
 
@@ -59,7 +57,19 @@
         .arrow.right {
             right: 10px;
         }
+
+        /* Media query for larger screens */
+        @media screen and (min-width: 768px) {
+            .photo-container {
+                width: 30vw;
+                height: 95vh;
+            }
+        }
+
+        /* Add more media queries as needed for different screen sizes */
     </style>
+
+
     <title>ಬೇಸಾಯ ಶಾಸ್ತ್ರ</title>
 
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9956563244920075"
@@ -68,6 +78,7 @@
 
 <body>
     <div class="photo-container">
+        <h1 style="text-align: center;">ಬೇಸಾಯ ಶಾಸ್ತ್ರ</h1>
         <div class="photo-wrapper" id="photoWrapper">
             <img src="/images/b1.jpg" alt="Photo 1">
             <img src="/images/b2.jpg" alt="Photo 2">
@@ -83,8 +94,6 @@
             <img src="/images/b12.jpg" alt="Photo 12">
             <img src="/images/b13.jpg" alt="Photo 13">
             <img src="/images/b14.jpg" alt="Photo 14">
-
-            <!-- Add more images as needed -->
         </div>
         <div class="arrow left" onclick="prevPhoto()">&#8249;</div>
         <div class="arrow right" onclick="nextPhoto()">&#8250;</div>

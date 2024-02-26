@@ -272,7 +272,7 @@ nav .fa {
       width: 55%;
       height: auto;
       display: block;
-      margin-left:  6rem;
+      margin-left: 6rem;
     }
   }
 
@@ -301,7 +301,8 @@ nav .fa {
 
 /* Style for the boxes */
 .box {
-  height: 200px; /* Adjust the height as needed */
+  height: 200px;
+  /* Adjust the height as needed */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -321,7 +322,8 @@ nav .fa {
 
 /* Hover effect for the boxes */
 .box:hover {
-  background: linear-gradient(to right, #333, #555); /* Adjust hover background color */
+  background: linear-gradient(to right, #333, #555);
+  /* Adjust hover background color */
 }
 
 
@@ -565,8 +567,8 @@ h3 {
 }
 
 .sub-header-image-1 {
-  background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)),
-    url(images/banner.png);
+  background-image:
+    url(images/banner15.jpg);
 }
 
 .sub-header-image-2 {

@@ -25,6 +25,7 @@
             max-width: 1200px;
             /* Add a maximum width for larger screens */
             overflow: hidden;
+            border: 15px double black;
         }
 
         .photo-wrapper {
@@ -59,6 +60,13 @@
         .arrow.right {
             right: 10px;
         }
+
+        @media screen and (min-width: 768px) {
+            .photo-container {
+                width: 30vw;
+                height: 95vh;
+            }
+        }
     </style>
     <title>ಸಮಸ್ಯಾತ್ಮಕ ಮಣ್ಣು,ಪೋಷಕಾಂಶಗಳ ಕೊರತೆಯ ಲಕ್ಷಣಗಳು ಹಾಗೂ ನಿರ್ವಹಣೆ
     </title>
@@ -68,6 +76,8 @@
 
 <body>
     <div class="photo-container">
+        <h2 style="text-align: center;">ಸಮಸ್ಯಾತ್ಮಕ ಮಣ್ಣು,ಪೋಷಕಾಂಶಗಳ ಕೊರತೆಯ ಲಕ್ಷಣಗಳು ಹಾಗೂ ನಿರ್ವಹಣೆ
+        </h2>
         <div class="photo-wrapper" id="photoWrapper">
             <img src="/images/n1.jpg" alt="Photo 1">
             <img src="/images/n2.jpg" alt="Photo 2">

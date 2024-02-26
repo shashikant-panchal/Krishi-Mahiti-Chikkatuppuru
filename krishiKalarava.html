@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Boxes</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            align-items: center;
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            /* Center horizontally */
+            align-items: center;
+            /* Center vertically */
+            min-height: 80vh;
+            /* Set minimum height to fill the viewport */
+            padding: 20px;
+        }
+
+        .box {
+            flex: 0 0 45%;
+            /* Adjust as needed */
+            margin-top: 100px;
+            padding: 20px;
+            text-align: center;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            text-decoration: none;
+            color: #fff;
+        }
+
+        .box:hover {
+            background-color: #ddd;
+        }
+
+        .box1 {
+            background: linear-gradient(45deg, #6c34e7, #f28f16);
+            border-radius: 10px;
+            padding: 50px;
+        }
+
+        .box2 {
+            background: linear-gradient(45deg, #87b825, #2011ab);
+            border-radius: 10px;
+            padding: 50px;
+        }
+
+        @media (max-width: 768px) {
+            .box {
+                flex-basis: 70%;
+                /* Adjust the margin for smaller screens */
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <a href="soon.html" class="box box1">
+            <h2>ಕಾರ್ಯಕ್ರಮಗಳು</h2>
+        </a>
+
+        <a href="prakatane2.html" class="box box2">
+            <h2>ಪತ್ರಿಕಾಪ್ರಕಟಣೆಗಳು</h2>
+        </a>
+    </div>
+
+</body>
+
+</html>
